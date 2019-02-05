@@ -5,8 +5,10 @@ Made as a project, not to replace other network mapping software
 import socket,os,re #,threading
 from ping import *
 
-soc = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-soc.connect(("google.com",0))
+pingSoc = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+tcpSoc = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+pingSoc.connect(("google.com",0))
 #get ip
 ip = str(socket.gethostbyname(socket.gethostname()))
 
